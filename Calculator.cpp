@@ -35,7 +35,7 @@ void Calculator::addObservation() {
 
     if (valueCount != vecDim)
     {
-        std::cerr << "Invalid observation" << std::endl;
+        std::cerr << "Invalid observation." << std::endl;
         return;
     }
 
@@ -49,7 +49,7 @@ void Calculator::printObservation() const {
 
     const int search = observationsDict.contains(observationName);
     if (search == -1) {
-        std::cerr << "Invalid or nonexistent observation" << std::endl;
+        std::cerr << "Invalid or nonexistent observation." << std::endl;
         return;
     }
     observationsDict.printKeyValuePair(observationName);
@@ -144,7 +144,7 @@ bool Calculator::isEmptyCalculator() const
 {
     if (observationsDict.getSize() == 0)
     {
-        std::cerr << "Empty calculator";
+        std::cerr << "Empty calculator.";
         return true;
     }
     return false;
