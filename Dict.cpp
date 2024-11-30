@@ -35,8 +35,6 @@ void Dict::resize()
     delete[] data;
     data = newData;
     capacity = newCapacity;
-
-    std::cout << "Resized dict to capacity: " << capacity << std::endl;
 }
 
 KeyValuePair *Dict::operator[](int index) const {

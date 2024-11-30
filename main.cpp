@@ -20,9 +20,10 @@ int main(int argc, char* argv[])
     Calculator calc(minDims, maxDims);
 
     bool exit_flag = false;
+    main_menu();
     while (not exit_flag)
     {
-        main_menu();
+
         int choice;
         std::cin >> choice;
 
@@ -62,6 +63,6 @@ int main(int argc, char* argv[])
 
 void main_menu()
 {
-    std::cout << "Main Menu:\n" << "\t[1] New observation\n" << "\t[2] Print observation\n";
-    std::cout << "\t[3] Expected value vector\n"<< "\t[4] Covariance matrix\n"<< "\t[5] Exit\n";
+    std::cout << "[1] New observation\n" << "[2] Print observation\n";
+    std::cout << "[3] Expected value vector\n"<< "[4] Covariance matrix\n"<< "[5] Exit\n";
 }

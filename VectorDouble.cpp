@@ -135,14 +135,14 @@ bool VectorDouble::isFull() const
 
 void VectorDouble::print() const
 {
-    std::cout << "[ ";
+    std::cout << "[";
     for (int i = 0; i < size; ++i)
     {
-        std::cout << data[i] << " ";
+        std::cout << " " << data[i];
     }
     for (int i = size; i < dim; ++i)
     {
-        std::cout << "0 ";
+        std::cout << " 0";
     }
     std::cout << "]" << std::endl;
 }
