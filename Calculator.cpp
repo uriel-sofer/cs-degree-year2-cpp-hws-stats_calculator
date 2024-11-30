@@ -59,13 +59,13 @@ void Calculator::printObservation() const {
 void Calculator::calculateMeanVector()
 {
     VectorDouble sumVector(vecDim);
-    double* dimsSum = new double[vecDim](); // Init to 0
+    float* dimsSum = new float[vecDim](); // Init to 0
 
     for (int i = 0; i < observationsDict.getSize(); i++)
     {
         for (int j = 0; j < vecDim; j++)
         {
-            dimsSum[j] += observationsDict[i]->value[j];
+            dimsSum[j] += (float)(observationsDict[i]->value[j]);
         }
     }
 
@@ -94,8 +94,8 @@ void Calculator::calculateCovarianceMatrix()
                 const KeyValuePair* observation = observationsDict[k];
                 const double* observationData = observation->value.getData();
 
-                const float centered_i = observationData[i] - meanVector[i];
-                const float centered_j = observationData[j] - meanVector[j];
+                const float centered_i = (float)(observationData[i] - meanVector[i]);
+                const float centered_j = (float)(observationData[j] - meanVector[j]);
 
                 sum += centered_i * centered_j;
             }
@@ -113,7 +113,7 @@ void Calculator::calculateCovarianceMatrix()
         }
         std::cout << std::endl;
     }
-    std::cout << "]" << std::endl;
+    std::cout << "]";
 
     // Free
     for (int i = 0; i < vecDim; ++i) {
@@ -144,7 +144,7 @@ bool Calculator::isEmptyCalculator() const
 {
     if (observationsDict.getSize() == 0)
     {
-        std::cerr << "Empty calculator.";
+        std::cerr << "Empty calculator." << std::endl;
         return true;
     }
     return false;
