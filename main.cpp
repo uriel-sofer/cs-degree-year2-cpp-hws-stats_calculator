@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
     main_menu();
     while (not exit_flag)
     {
-
+        // main_menu() here would be a better approach imo
         int choice;
         std::cin >> choice;
 

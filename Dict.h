@@ -9,6 +9,9 @@
 class Dict;
 class Calculator;
 
+/**
+ * My version of a tuple, to be used in the Dict class
+ */
 class KeyValuePair {
 private:
     std::string key;
@@ -46,14 +49,52 @@ public:
      explicit Dict(int MAX_SIZE);
     ~Dict();
 
+    /**
+     * @param key the identifier (Observation name in our case)
+     * @param value the value (VectorDouble in our case)
+     */
     void insert(const std::string& key, const VectorDouble& value);
+
+    /**
+     * @param pair An observation "tuple" to be inserted
+     */
     void insert(const KeyValuePair& pair);
+
+    /**
+     *
+     * @param key Observation name
+     * @return pointer to the observation's vector
+     */
     VectorDouble* get(const std::string& key) const;
+
+    /**
+     * 
+     * @param key Observation name
+     * @return the observation's index in the dict or -1 if not in dict
+     */
     int contains(const std::string& key) const;
+
+    /**
+     * 
+     * @param key Observation name to be printed
+     */
     void printKeyValuePair(const std::string& key) const;
+
+    /**
+     * Prints the whole dict
+     */
     void print() const;
 
+    /**
+     * 
+     * @return How many elements are currently in the dict
+     */
     int getSize() const;
+
+    /**
+     * 
+     * @return The total current capacity
+     */
     int getCapacity() const;
 
     friend Calculator;

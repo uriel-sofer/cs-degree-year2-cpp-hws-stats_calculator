@@ -76,15 +76,6 @@ void VectorDouble::push_back(const double& newElement)
 }
 
 
-void VectorDouble::pop_back()
-{
-    if (size == 0)
-    {
-        std::cerr << "Cannot pop_back from an empty vector" << std::endl;
-    }
-    --size;
-}
-
 double& VectorDouble::operator[](int index) {
     if (index >= dim) {
         throw std::out_of_range("Index out of range.");
