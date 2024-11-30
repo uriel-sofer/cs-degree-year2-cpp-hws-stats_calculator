@@ -20,15 +20,19 @@ Dict::~Dict()
 
 void Dict::resize()
 {
-    const int newCapacity = 2 * capacity;
+    if (capacity >= MAX_SIZE) {
+        std::cerr << "Error: Cannot resize. Capacity has reached the maximum limit: " << MAX_SIZE << std::endl;
+        return;
+    }
+
+    int newCapacity = std::min(2 * capacity, MAX_SIZE); // Ensure it doesn't exceed MAX_SIZE
     KeyValuePair** newData = new KeyValuePair*[newCapacity];
-    for (int i = 0; i < newCapacity; i++)
-    {
+
+    for (int i = 0; i < newCapacity; i++) {
         newData[i] = nullptr;
     }
 
-    for (int i = 0; i < size; i++)
-    {
+    for (int i = 0; i < size; i++) {
         newData[i] = data[i];
     }
 
