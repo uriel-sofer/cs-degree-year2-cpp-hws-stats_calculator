@@ -15,7 +15,12 @@ int main(int argc, char* argv[])
     }
 
     const int minDims = std::stoi(argv[1]);
-    const int maxDims = std::stoi(argv[2]);
+    const int maxCapacity = std::stoi(argv[2]);
+
+    if (maxCapacity <= 0 or minDims <= 0) {
+        std::cerr << "Invalid arguments <int> <int>" << std::endl;
+        return -1;
+    }
 
     Calculator calc(minDims, maxDims);
 
