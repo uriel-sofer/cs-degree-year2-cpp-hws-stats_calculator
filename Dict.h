@@ -56,6 +56,7 @@ public:
     void insert(const std::string& key, const VectorDouble& value);
 
     /**
+     * Inserts a tuple
      * @param pair An observation "tuple" to be inserted
      */
     void insert(const KeyValuePair& pair);
