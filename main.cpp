@@ -22,7 +22,8 @@ int main(int argc, char* argv[])
         return -1;
     }
 
-    Calculator calc(minDims, maxDims);
+
+    Calculator calc(minDims, maxCapacity);
 
     bool exit_flag = false;
     main_menu();
